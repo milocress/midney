@@ -25,7 +25,7 @@ SECRET_KEY = 'uan@u#)vly7#lmn+rpc@0&o)!+5sapb2kts^%b8=kp*7y0fe_#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['mood-midney.herokuapp.com']
 
 
 # Application definition
