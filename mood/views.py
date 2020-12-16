@@ -13,17 +13,17 @@ def thinker_list(request):
 
     elif request.method == 'POST':
         data = JSONParser().parse(request)
-        serializer = SnippetSerializer(data=data)
+        serializer = ThinkerSerializer(data=data)
         if serializer.is_valid():
             serializer.save()
             return JsonResponse(serializer.data, status=201)
         return JsonResponse(serializer.errors, status=400)
 
 @csrf_exempt
-def mood_append(request):
-    if request.method == 'POST':
-        data = JSONParser().parse(request)
-        serializer = SnippetSerializer(data=data)
+def mood_append(request, mood, thinker_id):
+    if request.method == 'GET':
+        data = {'mood': mood, 'thinker': thinker_id}
+        serializer = MoodSerializer(data=data)
         if serializer.is_valid():
             serializer.save()
             return JsonResponse(serializer.data, status=201)

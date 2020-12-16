@@ -3,5 +3,5 @@ from mood import views
 
 urlpatterns = [
     path('thinkers/', views.thinker_list),
-    path('moods/', views.mood_append),
+    path('moods/<int:thinker>/<int:mood>', views.mood_append),
 ]
