@@ -20,9 +20,9 @@ def thinker_list(request):
         return JsonResponse(serializer.errors, status=400)
 
 @csrf_exempt
-def mood_append(request, mood, thinker_id):
+def mood_append(request, mood, thinker):
     if request.method == 'GET':
-        data = {'mood': mood, 'thinker': thinker_id}
+        data = {'mood': mood, 'thinker': thinker}
         serializer = MoodSerializer(data=data)
         if serializer.is_valid():
             serializer.save()
