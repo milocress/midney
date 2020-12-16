@@ -1,1 +1,1 @@
-web: python manage.py migrate && gunicorn midney.wsgi --log-file -
+web: gunicorn midney.wsgi --log-file -
